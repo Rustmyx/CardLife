@@ -73,6 +73,11 @@ public class GUI {
 		frame.getContentPane().add(lblLeben_1);
 		
 		JButton btnRagequit = new JButton("Ragequit");
+		btnRagequit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
 		btnRagequit.setBounds(525, 511, 89, 23);
 		frame.getContentPane().add(btnRagequit);
 		frame.setBounds(100, 100, 640, 579);
