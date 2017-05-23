@@ -4,7 +4,6 @@ import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -31,24 +30,6 @@ public class GUI {
 				}
 			}
 		});
-	}
-	
-	public static void shutdown() throws RuntimeException, IOException {
-	    String shutdownCommand;
-	    String operatingSystem = System.getProperty("os.name");
-
-	    if ("Linux".equals(operatingSystem) || "Mac OS X".equals(operatingSystem)) {
-	        shutdownCommand = "shutdown -h now";
-	    }
-	    else if ("Windows".equals(operatingSystem)) {
-	        shutdownCommand = "shutdown.exe -s -t 0";
-	    }
-	    else {
-	        throw new RuntimeException("Unsupported operating system.");
-	    }
-
-	    Runtime.getRuntime().exec(shutdownCommand);
-	    System.exit(0);
 	}
 
 	/**
@@ -98,19 +79,12 @@ public class GUI {
 		JButton btnRagequit = new JButton("Ragequit");
 		btnRagequit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try {
-					shutdown();
-				} catch (RuntimeException | IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				System.exit(0);
 			}
 		});
 		btnRagequit.setBounds(525, 511, 89, 23);
 		frmCardlife.getContentPane().add(btnRagequit);
 		frmCardlife.setBounds(100, 100, 645, 575);
 		frmCardlife.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		
 	}
 }
