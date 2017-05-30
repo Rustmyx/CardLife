@@ -84,6 +84,18 @@ public class GUI {
 		});
 		btnRagequit.setBounds(525, 511, 89, 23);
 		frmCardlife.getContentPane().add(btnRagequit);
+		
+		JLabel lbldeckimage = new JLabel("[DeckImage]");
+		lbldeckimage.setBounds(35, 248, 89, 26);
+		frmCardlife.getContentPane().add(lbldeckimage);
+		
+		JLabel lblcardimageplayer = new JLabel("[CardImagePlayer2]");
+		lblcardimageplayer.setBounds(242, 134, 97, 33);
+		frmCardlife.getContentPane().add(lblcardimageplayer);
+		
+		JLabel lblcardimageplayer_1 = new JLabel("[CardImagePlayer1]");
+		lblcardimageplayer_1.setBounds(242, 411, 113, 23);
+		frmCardlife.getContentPane().add(lblcardimageplayer_1);
 		frmCardlife.setBounds(100, 100, 645, 575);
 		frmCardlife.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
