@@ -2,7 +2,7 @@
 public class JokerDeck extends Deck {
 
 
-	JokerCard Card1 = new JokerCard("Ass", 1);
+	
 	
 	public JokerDeck() {
 		super();
@@ -10,9 +10,21 @@ public class JokerDeck extends Deck {
 	}	
 	
 	public int getKartenWert(){
-		return Card1.getKartenWert();
+		return (Integer) null;
 	}
 	//ForEach
+
+	@Override
+	Card getCard() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	void addCard() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }

@@ -14,5 +14,8 @@ public class JokerCard implements Card{
 	public int getKartenWert(){
 		return Kartenwert;
 	}
+	public String getKartenName(){
+		return Kartenname;
+	}
 
 }

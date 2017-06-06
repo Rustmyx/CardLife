@@ -11,15 +11,17 @@ import javax.swing.JPanel;
 
 public class GUI {
 
-	//game game = new game();
+	game game = new game();
+	/*Player Spieler1 = new Player("Spieler 1", 30);
+	Player Spieler2 = new Player("Spieler 2", 30);*/
 	
 	JFrame frmCardlife;
 
 	/**
 	 * Launch the application.
 	 */
-	/*public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
+	public static void main(String[] args) {
+	/*	EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					GUI window = new GUI();
@@ -28,14 +30,17 @@ public class GUI {
 					e.printStackTrace();
 				}
 			}
-		});
-	}*/
+		});*/
+		GUI window = new GUI();
+		window.frmCardlife.setVisible(true);
+	}
 
 	/**
 	 * Create the application.
 	 */
 	public GUI() {
 		initialize();
+		game.StandardDeck.addCard();
 	}
 
 	/**
@@ -50,6 +55,9 @@ public class GUI {
 		JButton btnNewButton = new JButton("Ziehen");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				game.Spieler1.getCard();
+				game.Spieler2.getCard();
+				game.combat();
 			}
 		});
 		btnNewButton.setBounds(464, 248, 137, 39);
@@ -65,12 +73,12 @@ public class GUI {
 		lblSpieler_1.setBounds(257, 66, 68, 23);
 		frmCardlife.getContentPane().add(lblSpieler_1);
 		
-		JLabel lblLeben = new JLabel("Leben: ");
+		JLabel lblLeben = new JLabel("Leben: " + game.Spieler1.lifepool);
 		lblLeben.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		lblLeben.setBounds(20, 486, 113, 39);
 		frmCardlife.getContentPane().add(lblLeben);
 		
-		JLabel lblLeben_1 = new JLabel("Leben: ");
+		JLabel lblLeben_1 = new JLabel("Leben: " + game.Spieler2.lifepool);
 		lblLeben_1.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		lblLeben_1.setBounds(20, 11, 113, 50);
 		frmCardlife.getContentPane().add(lblLeben_1);
@@ -88,11 +96,11 @@ public class GUI {
 		lbldeckimage.setBounds(35, 248, 89, 26);
 		frmCardlife.getContentPane().add(lbldeckimage);
 		
-		JLabel lblcardimageplayer = new JLabel("[CardImagePlayer2]");
+		JLabel lblcardimageplayer = new JLabel("Wert: " + game.Spieler1.aktuelleKarte);
 		lblcardimageplayer.setBounds(242, 134, 97, 33);
 		frmCardlife.getContentPane().add(lblcardimageplayer);
 		
-		JLabel lblcardimageplayer_1 = new JLabel("[CardImagePlayer1]");
+		JLabel lblcardimageplayer_1 = new JLabel("Wert: " + game.Spieler2.aktuelleKarte);
 		lblcardimageplayer_1.setBounds(242, 411, 113, 23);
 		frmCardlife.getContentPane().add(lblcardimageplayer_1);
 		
