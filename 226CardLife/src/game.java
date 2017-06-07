@@ -28,10 +28,10 @@ public class game {
 		
 		StandardDeck.getCard();
 		Spieler1.aktuelleKarte = StandardDeck.getKartenWert();
-		Spieler1.lifepool = Spieler1.lifepool - 1
+		Spieler1.lifepool = Spieler1.lifepool - 1;
 		StandardDeck.getCard();
 		Spieler2.aktuelleKarte = StandardDeck.getKartenWert();
-		Spieler2.lifepool = Spieler2.lifepool - 1
+		Spieler2.lifepool = Spieler2.lifepool - 1;
 		
 		
 	}
