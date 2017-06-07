@@ -56,7 +56,6 @@ public class GUI {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				game.getCard();
-				game.getCard();
 				game.combat();
 			}
 		});

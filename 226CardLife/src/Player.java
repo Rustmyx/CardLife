@@ -4,10 +4,6 @@ public class Player {
 	public int lifepool;
 	public String name;
 	
-
-	
-	//Variable für aktive Karte
-	
 	
 	
 	int aktuelleKarte;
@@ -17,14 +13,14 @@ public class Player {
 		this.lifepool = lifepool;
 		
 	}
-	//SwitchCase für Kartenauslese aus Deck
-	void getCard() {
+
+/*	void getCard() {
 		
 		game.StandardDeck.getCard();
 		aktuelleKarte = game.StandardDeck.getKartenWert();
 		lifepool = lifepool - 1;
 		
 		
-	}
+	}*/
 
 }
