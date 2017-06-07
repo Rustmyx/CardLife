@@ -55,8 +55,8 @@ public class GUI {
 		JButton btnNewButton = new JButton("Ziehen");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				game.Spieler1.getCard();
-				game.Spieler2.getCard();
+				game.getCard();
+				game.getCard();
 				game.combat();
 			}
 		});

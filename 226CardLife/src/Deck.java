@@ -17,9 +17,7 @@ public abstract class Deck {
 	abstract void addCard();
 	
 	
-	//ArrayList
-	//MethodeKartenZiehen
-	//Add Method
+
 	
 	
 }
