@@ -12,7 +12,10 @@ public abstract class Deck {
 		
 	}
 	
-	abstract int getKartenWert();
+	public int getKartenWert(){
+		return aktuelleKarte.getKartenWert();
+	}
+	
 	abstract Card getCard();
 	abstract void addCard();
 	

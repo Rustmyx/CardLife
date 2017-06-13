@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 public class GUI {
 
-	game game = new game();
+	private game game = new game();
 	/*Player Spieler1 = new Player("Spieler 1", 30);
 	Player Spieler2 = new Player("Spieler 2", 30);*/
 	
@@ -40,7 +40,7 @@ public class GUI {
 	 */
 	public GUI() {
 		initialize();
-		game.StandardDeck.addCard();
+		
 	}
 
 	/**
@@ -51,16 +51,6 @@ public class GUI {
 		frmCardlife.setTitle("CardLife");
 		frmCardlife.getContentPane().setBackground(Color.GREEN);
 		frmCardlife.getContentPane().setLayout(null);
-		
-		JButton btnNewButton = new JButton("Ziehen");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				game.getCard();
-				game.combat();
-			}
-		});
-		btnNewButton.setBounds(464, 248, 137, 39);
-		frmCardlife.getContentPane().add(btnNewButton);
 		
 		JLabel lblSpieler = new JLabel("Spieler 1");
 		lblSpieler.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -116,19 +106,58 @@ public class GUI {
 		btnJa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				panel.setVisible(false);
+				game.JokerDeck = new JokerDeck();
+				game.JokerDeck.addCard();
+				game.joker=true;
 			}
 		});
 		btnJa.setBounds(10, 75, 89, 23);
 		panel.add(btnJa);
 		
+		JButton btnNewButton = new JButton("Ziehen");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				game.getCard();
+				game.combat();
+				
+				lblLeben.setText("Leben: " + game.Spieler1.lifepool);
+				lblLeben_1.setText("Leben: " + game.Spieler2.lifepool);
+				lblcardimageplayer.setText("Wert: " + game.Spieler1.aktuelleKarte);
+				lblcardimageplayer_1.setText("Wert: " + game.Spieler2.aktuelleKarte);
+			}
+		});
+		btnNewButton.setBounds(464, 248, 137, 39);
+		frmCardlife.getContentPane().add(btnNewButton);
+		
 		JButton btnNein = new JButton("Nein");
 		btnNein.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel.setVisible(false);
+				game.StandardDeck = new StandardDeck();
+				game.StandardDeck.addCard();
+				game.joker=false;
 			}
 		});
 		btnNein.setBounds(166, 75, 89, 23);
 		panel.add(btnNein);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setLayout(null);
+		panel_1.setBounds(172, 48, 265, 109);
+		frmCardlife.getContentPane().add(panel_1);
+		panel_1.setVisible(false);
+		
+		JLabel label = new JLabel("Mit Joker spielen?");
+		label.setBounds(87, 11, 113, 23);
+		panel_1.add(label);
+		
+		JButton button = new JButton("Ja");
+		button.setBounds(10, 75, 89, 23);
+		panel_1.add(button);
+		
+		JButton button_1 = new JButton("Nein");
+		button_1.setBounds(166, 75, 89, 23);
+		panel_1.add(button_1);
 		frmCardlife.setBounds(100, 100, 645, 575);
 		frmCardlife.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

@@ -2,9 +2,7 @@
 public class Player {
 	
 	public int lifepool;
-	public String name;
-	
-	
+	public String name;	
 	
 	int aktuelleKarte;
 	
@@ -14,13 +12,6 @@ public class Player {
 		
 	}
 
-/*	void getCard() {
-		
-		game.StandardDeck.getCard();
-		aktuelleKarte = game.StandardDeck.getKartenWert();
-		lifepool = lifepool - 1;
-		
-		
-	}*/
+
 
 }
