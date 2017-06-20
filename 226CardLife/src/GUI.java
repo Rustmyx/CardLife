@@ -1,4 +1,4 @@
-import java.awt.EventQueue;
+
 
 import javax.swing.JFrame;
 import java.awt.Color;
@@ -12,43 +12,21 @@ import javax.swing.JPanel;
 public class GUI {
 
 	private game game = new game();
-	/*Player Spieler1 = new Player("Spieler 1", 30);
-	Player Spieler2 = new Player("Spieler 2", 30);*/
-	
-	public String Spieler1 = game.Spieler1.name;
-	public String Spieler2 = game.Spieler2.name;
 	
 	JFrame frmCardlife;
 
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void main(String[] args) {
-	/*	EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUI window = new GUI();
-					window.frmCardlife.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});*/
+
 		GUI window = new GUI();
 		window.frmCardlife.setVisible(true);
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public GUI() {
 		initialize();
 		
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		frmCardlife = new JFrame();
 		frmCardlife.setTitle("CardLife");
@@ -76,12 +54,12 @@ public class GUI {
 		lblSpieler_1.setBounds(257, 66, 68, 23);
 		frmCardlife.getContentPane().add(lblSpieler_1);
 		
-		JLabel lblLeben = new JLabel("Leben: " + game.Spieler1.lifepool);
+		JLabel lblLeben = new JLabel("Leben: " + game.getSpieler1().getLifepool());
 		lblLeben.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		lblLeben.setBounds(20, 486, 113, 39);
 		frmCardlife.getContentPane().add(lblLeben);
 		
-		JLabel lblLeben_1 = new JLabel("Leben: " + game.Spieler2.lifepool);
+		JLabel lblLeben_1 = new JLabel("Leben: " + game.getSpieler2().getLifepool());
 		lblLeben_1.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		lblLeben_1.setBounds(20, 11, 113, 50);
 		frmCardlife.getContentPane().add(lblLeben_1);
@@ -99,11 +77,11 @@ public class GUI {
 		lbldeckimage.setBounds(35, 248, 89, 26);
 		frmCardlife.getContentPane().add(lbldeckimage);
 		
-		JLabel lblcardimageplayer = new JLabel("Wert: " + game.Spieler1.aktuelleKarte);
+		JLabel lblcardimageplayer = new JLabel("Wert: " + game.getSpieler1().getAktuelleKarte());
 		lblcardimageplayer.setBounds(244, 412, 97, 33);
 		frmCardlife.getContentPane().add(lblcardimageplayer);
 		
-		JLabel lblcardimageplayer_1 = new JLabel("Wert: " + game.Spieler2.aktuelleKarte);
+		JLabel lblcardimageplayer_1 = new JLabel("Wert: " + game.getSpieler2().getAktuelleKarte());
 		lblcardimageplayer_1.setBounds(244, 113, 113, 23);
 		frmCardlife.getContentPane().add(lblcardimageplayer_1);
 		
@@ -120,9 +98,8 @@ public class GUI {
 		btnJa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				panel.setVisible(false);
-				game.JokerDeck = new JokerDeck();
-				game.JokerDeck.addCard();
-				game.joker=true;
+				game.getJokerDeck().addCard();
+				game.setJoker(true);
 			}
 		});
 		btnJa.setBounds(10, 75, 89, 23);
@@ -131,35 +108,22 @@ public class GUI {
 		JButton btnNewButton = new JButton("Ziehen");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(game.Spieler1.lifepool > 0 && game.Spieler2.lifepool > 0){
-				game.getCard();
-				game.combat();
-				game.checkNegativeLifepool();
+				game.init();
 				
-				lblLeben.setText("Leben: " + game.Spieler1.lifepool);
-				lblLeben_1.setText("Leben: " + game.Spieler2.lifepool);
-				lblcardimageplayer.setText("Wert: " + game.Spieler1.aktuelleKarte);
-				lblcardimageplayer_1.setText("Wert: " + game.Spieler2.aktuelleKarte);}
-				else if(game.Spieler1.lifepool<=0){
-					label.setText(Spieler2 + " hat gewonnen");
-					game.checkNegativeLifepool();
-					lblLeben.setText("Leben: " + game.Spieler1.lifepool);
+				lblLeben.setText("Leben: " + game.getSpieler1().getLifepool());
+				lblLeben_1.setText("Leben: " + game.getSpieler2().getLifepool());
+				lblcardimageplayer.setText("Wert: " + game.getSpieler1().getAktuelleKarte());
+				lblcardimageplayer_1.setText("Wert: " + game.getSpieler2().getAktuelleKarte());
+				
+				if(game.isEnd()==true){
+					label.setText(game.getWinner() + " hat gewonnen!");
 					panel_1.setVisible(true);
 				}
-				else if(game.Spieler2.lifepool<=0){
-					label.setText(Spieler1 + " hat gewonnen");
-					game.checkNegativeLifepool();
-					lblLeben_1.setText("Leben: " + game.Spieler2.lifepool);
-					panel_1.setVisible(true);
-				}
-				else if(game.Spieler1.lifepool<=0 && game.Spieler2.lifepool<=0){
-					label.setText("Unentschieden");
-					game.checkNegativeLifepool();
-					lblLeben.setText("Leben: " + game.Spieler1.lifepool);
-					lblLeben_1.setText("Leben: " + game.Spieler2.lifepool);
-					panel_1.setVisible(true);
-				}
+			
 			}
+			
+			
+			
 		});
 		btnNewButton.setBounds(464, 248, 137, 39);
 		frmCardlife.getContentPane().add(btnNewButton);
@@ -168,9 +132,8 @@ public class GUI {
 		btnNein.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel.setVisible(false);
-				game.StandardDeck = new StandardDeck();
-				game.StandardDeck.addCard();
-				game.joker=false;
+				game.getStandardDeck().addCard();
+				game.setJoker(false);
 			}
 		});
 		btnNein.setBounds(166, 75, 89, 23);
