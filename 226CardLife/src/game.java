@@ -34,7 +34,6 @@ public class game {
 			StandardDeck.getCard();
 			Spieler1.aktuelleKarte = StandardDeck.getKartenWert();
 			Spieler1.lifepool = Spieler1.lifepool - 1;
-			System.out.println(Spieler1.lifepool);
 			StandardDeck.getCard();
 			Spieler2.aktuelleKarte = StandardDeck.getKartenWert();
 			Spieler2.lifepool = Spieler2.lifepool - 1;
@@ -42,14 +41,23 @@ public class game {
 			JokerDeck.getCard();
 			Spieler1.aktuelleKarte = JokerDeck.getKartenWert();
 			Spieler1.lifepool = Spieler1.lifepool - 1;
-			System.out.println(Spieler1.lifepool);
 			JokerDeck.getCard();
 			Spieler2.aktuelleKarte = JokerDeck.getKartenWert();
 			Spieler2.lifepool = Spieler2.lifepool - 1;
-			
-			
 		}
 		
+	}
+	public void checkNegativeLifepool(){
+		if(Spieler1.lifepool<0){
+			Spieler1.lifepool = 0;
+		}
+		else if(Spieler2.lifepool<0){
+			Spieler2.lifepool = 0;
+		}
+		else if(Spieler1.lifepool<0 && Spieler2.lifepool<0){
+			Spieler1.lifepool = 0;
+			Spieler2.lifepool = 0;
+		}
 	}
 	
 }

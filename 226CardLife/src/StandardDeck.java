@@ -39,9 +39,65 @@ public class StandardDeck extends Deck {
 		
 		cards.add(card1);
 		cards.add(card1);
-		for(Card i : cards) {
-			System.out.println(i.getKartenWert());
-		}
+		cards.add(card1);
+		cards.add(card1);
+		cards.add(card1);
+		cards.add(card1);
+		cards.add(card2);
+		cards.add(card2);
+		cards.add(card2);
+		cards.add(card2);
+		cards.add(card2);
+		cards.add(card2);
+		cards.add(card3);
+		cards.add(card3);
+		cards.add(card3);
+		cards.add(card3);
+		cards.add(card3);
+		cards.add(card3);
+		cards.add(card4);
+		cards.add(card4);
+		cards.add(card4);
+		cards.add(card4);
+		cards.add(card4);
+		cards.add(card4);
+		cards.add(card5);
+		cards.add(card5);
+		cards.add(card5);
+		cards.add(card5);
+		cards.add(card5);
+		cards.add(card5);
+		cards.add(card6);
+		cards.add(card6);
+		cards.add(card6);
+		cards.add(card6);
+		cards.add(card6);
+		cards.add(card6);
+		cards.add(card7);
+		cards.add(card7);
+		cards.add(card7);
+		cards.add(card7);
+		cards.add(card7);
+		cards.add(card7);
+		cards.add(card8);
+		cards.add(card8);
+		cards.add(card8);
+		cards.add(card8);
+		cards.add(card8);
+		cards.add(card8);
+		cards.add(card9);
+		cards.add(card9);
+		cards.add(card9);
+		cards.add(card9);
+		cards.add(card9);
+		cards.add(card9);
+		cards.add(card10);
+		cards.add(card10);
+		cards.add(card10);
+		cards.add(card10);
+		cards.add(card10);
+		cards.add(card10);
+		
 		
 		
 	}
