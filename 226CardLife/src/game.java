@@ -18,12 +18,14 @@ public class game {
 	
 	public void init(){
 		
+		checkWinner();
 		getCard();
 		checkWinner();
 		if(end == false){
 		combat();
 		checkNegativeLifepool();
-		checkWinner();}
+		checkWinner();
+		}
 		
 	}
 	
@@ -129,19 +131,19 @@ public class game {
 	}
 	public void checkWinner(){
 		
-		if(Spieler1.getLifepool() <= 0){
+		if(Spieler1.getLifepool() <= 1){
 			
 			winner = Spieler2.getName();
 			end = true;
 			
 		}
-		else if (Spieler2.getLifepool() <= 0){
+		else if (Spieler2.getLifepool() <= 1){
 			
 			winner = Spieler1.getName();
 			end = true;
 			
 		}
-		else if (Spieler1.getLifepool() <= 0 && Spieler2.getLifepool() <= 0){
+		else if (Spieler1.getLifepool() <= 1 && Spieler2.getLifepool() <= 1){
 			
 			winner = "Niemand";
 			end = true;
