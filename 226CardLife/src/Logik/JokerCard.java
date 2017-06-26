@@ -1,4 +1,4 @@
-
+package Logik;
 public class JokerCard implements Card{
 	
 	private String Kartenname;

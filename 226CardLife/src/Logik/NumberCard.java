@@ -1,4 +1,4 @@
-
+package Logik;
 public class NumberCard implements Card {
 
 	private String Kartenname;

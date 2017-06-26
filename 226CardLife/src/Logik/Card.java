@@ -1,3 +1,5 @@
+package Logik;
+
 
 public interface Card {
 	

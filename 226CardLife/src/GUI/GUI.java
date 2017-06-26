@@ -1,3 +1,4 @@
+package GUI;
 
 
 import javax.swing.JFrame;
@@ -8,6 +9,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JPanel;
+
+import Logik.game;
 
 public class GUI {
 
