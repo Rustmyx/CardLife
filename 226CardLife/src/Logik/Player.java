@@ -1,5 +1,7 @@
 package Logik;
-
+/*
+ * @Author Rusty Schaerli und Matthias Weissen
+ */
 public class Player {
 	
 	private int lifepool;

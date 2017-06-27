@@ -1,5 +1,8 @@
 package Logik;
 import java.util.ArrayList;
+/*
+ * @Author Rusty Schaerli und Matthias Weissen
+ */
 //Abstrakte Klasse für die Vererbung an die Deck-Klassen
 public abstract class Deck {
 	//Arry mit Kartenobjekten

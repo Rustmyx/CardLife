@@ -11,7 +11,9 @@ import java.awt.Font;
 import javax.swing.JPanel;
 
 import Logik.game;
-
+/*
+ * @Author Rusty Schaerli und Matthias Weissen
+ */
 public class GUI {
 
 	private game game = new game();

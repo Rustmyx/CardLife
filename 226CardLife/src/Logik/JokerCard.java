@@ -1,4 +1,7 @@
 package Logik;
+/*
+ * @Author Rusty Schaerli und Matthias Weissen
+ */
 public class JokerCard implements Card{
 	
 	private String Kartenname;

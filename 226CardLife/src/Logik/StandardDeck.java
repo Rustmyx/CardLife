@@ -2,6 +2,10 @@ package Logik;
 
 import java.util.Random;
 
+/*
+ * @Author Rusty Schaerli und Matthias Weissen
+ */
+
 public class StandardDeck extends Deck {	
 	
 	

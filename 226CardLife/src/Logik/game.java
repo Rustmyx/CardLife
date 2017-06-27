@@ -1,5 +1,9 @@
 package Logik;
 
+/*
+ * @Author Rusty Schaerli und Matthias Weissen
+ */
+
 public class game {
 
 	private	Player Spieler1 = new Player("Spieler 1", 30);

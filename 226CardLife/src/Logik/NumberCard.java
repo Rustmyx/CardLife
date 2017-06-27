@@ -1,4 +1,7 @@
 package Logik;
+/*
+ * @Author Rusty Schaerli und Matthias Weissen
+ */
 public class NumberCard implements Card {
 
 	private String Kartenname;
