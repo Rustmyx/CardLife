@@ -15,7 +15,7 @@ public class StandardDeckTestGetCard {
 		
 	}
 
-	@Test
+	@Test	//Testet ob die gezogene Karte aus dem Array entfernt wird
 	public void testGetCard() {
 		sd.addCard();
 		sd.getCard();

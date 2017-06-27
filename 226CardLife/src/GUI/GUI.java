@@ -29,13 +29,13 @@ public class GUI {
 		initialize();
 		
 	}
-
+	//initialiseren des GUI's
 	private void initialize() {
 		frmCardlife = new JFrame();
 		frmCardlife.setTitle("CardLife");
 		frmCardlife.getContentPane().setBackground(Color.GREEN);
 		frmCardlife.getContentPane().setLayout(null);
-		
+		//Panel für den Gewinner
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(169, 169, 169));
 		panel_1.setBounds(86, 135, 409, 208);
@@ -46,7 +46,7 @@ public class GUI {
 		JLabel label = new JLabel("Gewinner");
 		label.setBounds(122, 79, 194, 63);
 		panel_1.add(label);
-		
+		//Label für Spieler
 		JLabel lblSpieler = new JLabel("Spieler 1");
 		lblSpieler.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblSpieler.setBounds(257, 455, 68, 23);
@@ -56,7 +56,7 @@ public class GUI {
 		lblSpieler_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblSpieler_1.setBounds(257, 66, 68, 23);
 		frmCardlife.getContentPane().add(lblSpieler_1);
-		
+		//Label für Leben
 		JLabel lblLeben = new JLabel("Leben: " + game.getSpieler1().getLifepool());
 		lblLeben.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		lblLeben.setBounds(20, 486, 113, 39);
@@ -66,7 +66,7 @@ public class GUI {
 		lblLeben_1.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		lblLeben_1.setBounds(20, 11, 113, 50);
 		frmCardlife.getContentPane().add(lblLeben_1);
-		
+		//ein kleiner Spassknpof der Ragequit - er beendet das Programm
 		JButton btnRagequit = new JButton("Ragequit");
 		btnRagequit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -75,11 +75,11 @@ public class GUI {
 		});
 		btnRagequit.setBounds(525, 511, 89, 23);
 		frmCardlife.getContentPane().add(btnRagequit);
-		
-		JLabel lbldeckimage = new JLabel("[DeckImage]");
+		//Platzhalter
+		JLabel lbldeckimage = new JLabel("");
 		lbldeckimage.setBounds(35, 248, 89, 26);
 		frmCardlife.getContentPane().add(lbldeckimage);
-		
+		//Gibt den Wert der aktuellen Karte an
 		JLabel lblcardimageplayer = new JLabel("Wert: " + game.getSpieler1().getAktuelleKarte());
 		lblcardimageplayer.setBounds(244, 412, 97, 33);
 		frmCardlife.getContentPane().add(lblcardimageplayer);
@@ -87,16 +87,16 @@ public class GUI {
 		JLabel lblcardimageplayer_1 = new JLabel("Wert: " + game.getSpieler2().getAktuelleKarte());
 		lblcardimageplayer_1.setBounds(244, 113, 113, 23);
 		frmCardlife.getContentPane().add(lblcardimageplayer_1);
-		
+		//Panel für die Auswahl des Decks
 		JPanel panel = new JPanel();
 		panel.setBounds(172, 193, 265, 109);
 		frmCardlife.getContentPane().add(panel);
 		panel.setLayout(null);
-		
+		//Label für die Frage mit welchem Deck gespielt wird
 		JLabel lblMitJokerSpielen = new JLabel("Mit Joker spielen?");
 		lblMitJokerSpielen.setBounds(87, 11, 113, 23);
 		panel.add(lblMitJokerSpielen);
-		
+		//Der Button added das Jokerdeck
 		JButton btnJa = new JButton("Ja");
 		btnJa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -107,7 +107,7 @@ public class GUI {
 		});
 		btnJa.setBounds(10, 75, 89, 23);
 		panel.add(btnJa);
-		
+		//Ziehen zieht eine Karte und setzt die Labels entsprechend der veränderten Werte neu
 		JButton btnNewButton = new JButton("Ziehen");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -130,7 +130,7 @@ public class GUI {
 		});
 		btnNewButton.setBounds(464, 248, 137, 39);
 		frmCardlife.getContentPane().add(btnNewButton);
-		
+		//Der Button added das StandardDeck ohne Joker
 		JButton btnNein = new JButton("Nein");
 		btnNein.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

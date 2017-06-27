@@ -17,7 +17,7 @@ public class gameTestNegativLifepool {
 		
 	}
 
-	@Test
+	@Test //Testet ob der Negative Lifepool korrekt ueberprueft wird und auf 0 gesetzt wird
 	public void testGetCard() {
 		
 	

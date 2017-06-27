@@ -15,7 +15,7 @@ public class gameTestGetCardandLifePool {
 
 	}
 
-	@Test
+	@Test //Testet ob beim ziehen einer Karte dem Lifepool 1 Leben abgezogen wird und ob der Wert der gezogenen Karte in die Variable gesetzt wird
 	public void testInit() {
 		
 		g.getStandardDeck().addCard();
@@ -31,7 +31,7 @@ public class gameTestGetCardandLifePool {
 		
 	}
 
-	@Test
+	@Test //Testet ob der Gewinner korrekt bestimmt wird. Da beim Ziehen einer Karte 1 Leben abgezogen wird sollte auch keine neue Karte gespeichert werden und der gewinner bestimmt werden
 	public void testWinner(){
 		g.getSpieler1().setLifepool(1);
 		g.checkWinner();

@@ -1,8 +1,8 @@
 package Logik;
 import java.util.ArrayList;
-
+//Abstrakte Klasse für die Vererbung an die Deck-Klassen
 public abstract class Deck {
-	
+	//Arry mit Kartenobjekten
 	private ArrayList<Card> cards = new ArrayList<Card>();
 	
 	private int zieher;

@@ -16,7 +16,7 @@ public class game {
 	public game(){
 		
 	}
-	
+	//Init ruft diverse Methoden auf welche den Spielverlauf besimmen
 	public void init(){
 		
 		checkWinner();
@@ -85,7 +85,7 @@ public class game {
 	public void setJokerDeck(JokerDeck jokerDeck) {
 		JokerDeck = jokerDeck;
 	}
-
+	//Vergleicht die gezogenen Karten und zieht entsprechend Leben ab
 	public void combat(){
 		if(Spieler1.getAktuelleKarte() > Spieler2.getAktuelleKarte()){
 			Spieler2.setLifepool(Spieler2.getLifepool()- (Spieler1.getAktuelleKarte() - Spieler2.getAktuelleKarte()));
@@ -97,7 +97,7 @@ public class game {
 		
 		}
 	}
-	
+	//Zieht eine Karte und setzt den aktuellen Kartenwert
 	public void getCard() {
 	
 		
@@ -117,7 +117,7 @@ public class game {
 			Spieler2.setLifepool(Spieler2.getLifepool()-1);
 		}
 		
-	}
+	}//Ueberprueft ob das Leben unter 0 fällt und setzt falls dies der Fall ist das Leben auf 0
 	public void checkNegativeLifepool(){
 		if(Spieler1.getLifepool()<0){
 			Spieler1.setLifepool(0);
@@ -129,7 +129,7 @@ public class game {
 			Spieler1.setLifepool(0);
 			Spieler2.setLifepool(0);
 		}
-	}
+	}//Ueberprueft ob ein Spieler einen gewissen "Lifepool" erreicht hat und bestimmt anhand dessen einen gewinner
 	public void checkWinner(){
 		
 		if(Spieler1.getLifepool() <= 1){

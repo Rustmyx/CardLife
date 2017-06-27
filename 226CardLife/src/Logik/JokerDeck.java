@@ -26,7 +26,7 @@ public class JokerDeck extends Deck {
 	
 
 
-
+	//Zieht eine Karte aus der ArrayList und speichert die gezogene Karte in die Variable AktuelleKarte
 	public Card getCard() {
 		setZieher(r.nextInt(getCards().size()));
 		setAktuelleKarte(getCards().get(getZieher()));
@@ -34,7 +34,7 @@ public class JokerDeck extends Deck {
 		return getAktuelleKarte();
 	}
 
-
+	//Added alle Objekte in die ArrayList
 	public void addCard() {
 
 		getCards().add(card1);
