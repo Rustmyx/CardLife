@@ -1,8 +1,9 @@
 package Logik;
 
-/*
+/**
  * @Author Rusty Schaerli und Matthias Weissen
  */
+
 
 public class game {
 
@@ -16,11 +17,16 @@ public class game {
 	private boolean end = false;
 
 	private String winner;
-	
+	/**
+	 * Constructor
+	 */
 	public game(){
 		
 	}
-	//Init ruft diverse Methoden auf welche den Spielverlauf besimmen
+
+	/**
+	 * Init ruft diverse Methoden auf welche den Spielverlauf besimmen
+	 */
 	public void init(){
 		
 		checkWinner();
@@ -33,63 +39,94 @@ public class game {
 		}
 		
 	}
-	
+	/**
+	 * @return
+	 */
 	public boolean isJoker() {
 		return joker;
 	}
-
+	/**
+	 * @param joker
+	 */
 	public void setJoker(boolean joker) {
 		this.joker = joker;
 	}
-
+	/**
+	 * @return
+	 */
 	public boolean isEnd() {
 		return end;
 	}
-
+	/**
+	 * @param end
+	 */
 	public void setEnd(boolean end) {
 		this.end = end;
 	}
-
+	/**
+	 * @return
+	 */
 	public String getWinner() {
 		return winner;
 	}
-
+	/**
+	 * @param winner
+	 */
 	public void setWinner(String winner) {
 		this.winner = winner;
 	}
-	
+	/**
+	 * @return
+	 */
 	public Player getSpieler1() {
 		return Spieler1;
 	}
-
+	/**
+	 * @param spieler1
+	 */
 	public void setSpieler1(Player spieler1) {
 		Spieler1 = spieler1;
 	}
-
+	/**
+	 * @return
+	 */
 	public Player getSpieler2() {
 		return Spieler2;
 	}
-
+	/**
+	 * @param spieler2
+	 */
 	public void setSpieler2(Player spieler2) {
 		Spieler2 = spieler2;
 	}
-
+	/**
+	 * @return
+	 */
 	public StandardDeck getStandardDeck() {
 		return StandardDeck;
 	}
-
+	/**
+	 * @param standardDeck
+	 */
 	public void setStandardDeck(StandardDeck standardDeck) {
 		StandardDeck = standardDeck;
 	}
-
+	/**
+	 * @return
+	 */
 	public JokerDeck getJokerDeck() {
 		return JokerDeck;
 	}
-
+	/**
+	 * @param jokerDeck
+	 */
 	public void setJokerDeck(JokerDeck jokerDeck) {
 		JokerDeck = jokerDeck;
 	}
-	//Vergleicht die gezogenen Karten und zieht entsprechend Leben ab
+	
+	/**
+	 * Vergleicht die gezogenen Karten und zieht entsprechend Leben ab
+	 */
 	public void combat(){
 		if(Spieler1.getAktuelleKarte() > Spieler2.getAktuelleKarte()){
 			Spieler2.setLifepool(Spieler2.getLifepool()- (Spieler1.getAktuelleKarte() - Spieler2.getAktuelleKarte()));
@@ -101,7 +138,10 @@ public class game {
 		
 		}
 	}
-	//Zieht eine Karte und setzt den aktuellen Kartenwert
+
+	/**
+	 * Zieht eine Karte und setzt den aktuellen Kartenwert 
+	 */
 	public void getCard() {
 	
 		
