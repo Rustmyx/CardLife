@@ -1,12 +1,14 @@
 package Logik;
-
 /**
- * @Author Rusty Schaerli und Matthias Weissen
+ * Hier werden Objekte für die beiden Spieler erstellt und die Parameter mitgeliefert
+ * Hier werden Objekte für die beiden Decks erstellt
+ * @param joker
+ * @param end
+ * @param winner
+ * @author Rusty Schaerli und Matthias Weissen
+ * @version 1.0
  */
-
-
 public class game {
-
 	private	Player Spieler1 = new Player("Spieler 1", 30);
 	private	Player Spieler2 = new Player("Spieler 2", 30);
 	private	StandardDeck StandardDeck = new StandardDeck();
@@ -23,9 +25,10 @@ public class game {
 	public game(){
 		
 	}
-
 	/**
-	 * Init ruft diverse Methoden auf welche den Spielverlauf besimmen
+	 * Wird aufgerufen bei dem ziehen einer Karte
+	 * prüft den Lifepool und zieht eine Karte
+	 * prüft falls jemand gewonnen hat 
 	 */
 	public void init(){
 		
@@ -40,90 +43,103 @@ public class game {
 		
 	}
 	/**
-	 * @return
+	 * Gibt den Wert aus der Variable joker zurück
+	 * @return joker
 	 */
 	public boolean isJoker() {
 		return joker;
 	}
 	/**
+	 * Setzt die Variable joker
 	 * @param joker
 	 */
 	public void setJoker(boolean joker) {
 		this.joker = joker;
 	}
 	/**
-	 * @return
+	 * Gibt den Wert aus der Variable end zurück
+	 * @return end
 	 */
 	public boolean isEnd() {
 		return end;
 	}
-	/**
+	/** 
+	 * Setzt die Variable end
 	 * @param end
 	 */
 	public void setEnd(boolean end) {
 		this.end = end;
 	}
 	/**
-	 * @return
+	 * Gibt den Wert aus der Variable winner zurück
+	 * @return winner
 	 */
 	public String getWinner() {
 		return winner;
 	}
 	/**
+	 * Setzt die Variable winner
 	 * @param winner
 	 */
 	public void setWinner(String winner) {
 		this.winner = winner;
 	}
 	/**
-	 * @return
+	 * Gibt den Wert aus der Variable Spieler1 zurück
+	 * @return Spieler1
 	 */
 	public Player getSpieler1() {
 		return Spieler1;
 	}
 	/**
-	 * @param spieler1
+	 * Setzt die Variable Spieler1
+	 * @param Spieler1
 	 */
 	public void setSpieler1(Player spieler1) {
 		Spieler1 = spieler1;
 	}
 	/**
-	 * @return
+	 * Gibt den Wert aus der Variable Spieler2 zurück
+	 * @return Spieler2
 	 */
 	public Player getSpieler2() {
 		return Spieler2;
 	}
 	/**
-	 * @param spieler2
+	 * Setzt die Variable Spieler2
+	 * @param Spieler2
 	 */
 	public void setSpieler2(Player spieler2) {
 		Spieler2 = spieler2;
 	}
 	/**
-	 * @return
+	 * Gibt den Wert aus der Variable StandardDeck zurück
+	 * @return StandardDeck
 	 */
 	public StandardDeck getStandardDeck() {
 		return StandardDeck;
 	}
 	/**
-	 * @param standardDeck
+	 * Setzt die Variable StandardDeck
+	 * @param StandardDeck
 	 */
 	public void setStandardDeck(StandardDeck standardDeck) {
 		StandardDeck = standardDeck;
 	}
 	/**
+	 * Gibt den Wert aus der Variable JokerDeck zurück
 	 * @return
 	 */
 	public JokerDeck getJokerDeck() {
 		return JokerDeck;
 	}
 	/**
+	 * Setzt die Variable JokerDeck
 	 * @param jokerDeck
 	 */
 	public void setJokerDeck(JokerDeck jokerDeck) {
 		JokerDeck = jokerDeck;
 	}
-	
 	/**
 	 * Vergleicht die gezogenen Karten und zieht entsprechend Leben ab
 	 */
@@ -140,7 +156,8 @@ public class game {
 	}
 
 	/**
-	 * Zieht eine Karte und setzt den aktuellen Kartenwert 
+	 * Zieht eine Karte und setzt den aktuellen Kartenwert
+	 * bei jedem ziehen wird ein Leben abgezogen
 	 */
 	public void getCard() {
 	
@@ -161,7 +178,11 @@ public class game {
 			Spieler2.setLifepool(Spieler2.getLifepool()-1);
 		}
 		
-	}//Ueberprueft ob das Leben unter 0 fällt und setzt falls dies der Fall ist das Leben auf 0
+	}
+	/**
+	 *  Prüft ob der Lifepool eines Spielers unter 0 ist
+	 *  Falls ja, wird der Lifepool auf 0 gesetzt
+	 */
 	public void checkNegativeLifepool(){
 		if(Spieler1.getLifepool()<0){
 			Spieler1.setLifepool(0);
@@ -173,7 +194,11 @@ public class game {
 			Spieler1.setLifepool(0);
 			Spieler2.setLifepool(0);
 		}
-	}//Ueberprueft ob ein Spieler einen gewissen "Lifepool" erreicht hat und bestimmt anhand dessen einen gewinner
+	}
+	/**
+	 * Prüft ob ein Spieler gewonnen hat
+	 * Ein Spieler hat gewonnen sobald der Lifepool auf 1 fällt
+	 */
 	public void checkWinner(){
 		
 		if(Spieler1.getLifepool() <= 1){

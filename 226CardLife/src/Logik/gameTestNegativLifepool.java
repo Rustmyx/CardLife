@@ -1,16 +1,19 @@
 package Logik;
+
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-/*
- * @Author Rusty Schaerli und Matthias Weissen
+/**
+ * Hier ist ein UnitTest zu der Lifepool verringerung beim Kartenziehen
+ * @param g
+ * @author Rusty Schaerli und Matthias Weissen
+ * @version 1.0
  */
 public class gameTestNegativLifepool {
 
 	game g;
 
-	
 	@Before
 	public void setUp() throws Exception {
 		
@@ -18,8 +21,9 @@ public class gameTestNegativLifepool {
 
 		
 	}
-
-	@Test //Testet ob der Negative Lifepool korrekt ueberprueft wird und auf 0 gesetzt wird
+	/**
+	 * Testet ob der Negative Lifepool korrekt ueberprueft wird und auf 0 gesetzt wird
+	 */
 	public void testGetCard() {
 		
 	

@@ -1,11 +1,12 @@
 package Logik;
-
-import java.util.Random;
-
-/*
- * @Author Rusty Schaerli und Matthias Weissen
+/**
+ * @author Rusty Schaerli und Matthias Weissen
+ * @version 1.0
  */
-
+import java.util.Random;
+/**
+ * Hier werden die Karten für das Deck initialisiert
+ */
 public class StandardDeck extends Deck {	
 	
 	
@@ -19,16 +20,22 @@ public class StandardDeck extends Deck {
 	private	Card card8 = new NumberCard("acht", 8);
 	private	Card card9 = new NumberCard("neun", 9);
 	private	Card card10 = new NumberCard("zehn", 10);
-
-	
+	/**
+	 * Hier wird die Random() Funktion in eine Variable gespeichert
+	 */
 	private Random r = new Random();
-	
+	/**
+	 * ruft den Konstruktor der Super-Klasse (Deck) auf
+	 */
 	public StandardDeck() {
 		super();
 		
+		
+	/**
+	 * Zieht eine Karte aus der ArrayList und speichert die gezogene Karte in die Variable AktuelleKarte
+	 * @return getAktuelleKarte()
+	 */
 	}
-
-	//Zieht eine Karte aus der ArrayList und speichert die gezogene Karte in die Variable AktuelleKarte
 	public Card getCard() {
 		
 		setZieher(r.nextInt(getCards().size()));
@@ -37,8 +44,9 @@ public class StandardDeck extends Deck {
 		return getAktuelleKarte();
 	}
 
-
-	//Added alle Objekte in die ArrayList
+	/**
+	 * Hier werden die oben erstellten Objekte in der richtigen Anzahl in die Arraylist hinzugefügt 
+	 */
 	public void addCard() {
 		
 		getCards().add(card1);
