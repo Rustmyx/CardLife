@@ -1,12 +1,12 @@
 package Logik;
-/**
- * Verwaltet die Daten die zum Spieler gehören
- * @param lifepool
- * @param name
- * @param aktuelleKarte
- * @author Rusty Schaerli und Matthias Weissen
- * @version 1.0
- */
+	/**
+	 * Verwaltet die Daten die zum Spieler gehören
+	 * @param lifepool
+ 	 * @param name
+ 	 * @param aktuelleKarte
+ 	 * @author Rusty Schaerli und Matthias Weissen
+ 	 * @version 1.0
+ 	 */
 public class Player {
 	
 	private int lifepool;

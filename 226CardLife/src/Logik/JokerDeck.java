@@ -1,13 +1,11 @@
 
 package Logik;
-/**
- * @author Rusty Schaerli und Matthias Weissen
- * @version 1.0
- */
 import java.util.Random;
-/**
- * Hier werden die Karten für das Deck initialisiert
- */
+	/**
+	 * Hier werden die Karten für das Deck initialisiert
+	 * @author Rusty Schaerli und Matthias Weissen
+	 * @version 1.0
+	 */
 public class JokerDeck extends Deck {
 	
 	private	Card card1 = new NumberCard("eins", 1);

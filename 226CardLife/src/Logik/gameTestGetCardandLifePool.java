@@ -2,11 +2,11 @@ package Logik;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-/**
- * @param g
- * @author Rusty Schaerli und Matthias Weissen
- * @version 1.0
- */
+	/**
+	 * @param g
+	 * @author Rusty Schaerli und Matthias Weissen
+	 * @version 1.0
+	 */
 public class gameTestGetCardandLifePool {
 	
 	game g;

@@ -1,13 +1,13 @@
 package Logik;
 import java.util.ArrayList;
-/**
- * Abstrakte Klasse die an die beiden Deckklassen (StandardDeck, JokerDeck) vererbt
- * @param zieher
- * @param aktuelleKarte
- * @array Cards
- * @author Rusty Schaerli und Matthias Weissen
- * @version 1.0
- */
+	/**
+	 * Abstrakte Klasse die an die beiden Deckklassen (StandardDeck, JokerDeck) vererbt
+	 * @param zieher
+	 * @param aktuelleKarte
+	 * @array Cards
+	 * @author Rusty Schaerli und Matthias Weissen
+	 * @version 1.0
+	 */
 public abstract class Deck {
 	
 	private ArrayList<Card> cards = new ArrayList<Card>();

@@ -4,12 +4,12 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-/**
- * Hier ist ein UnitTest zu der Lifepool verringerung beim Kartenziehen
- * @param g
- * @author Rusty Schaerli und Matthias Weissen
- * @version 1.0
- */
+	/**
+	 * Hier ist ein UnitTest zu der Lifepool verringerung beim Kartenziehen
+ 	* @param g
+ 	* @author Rusty Schaerli und Matthias Weissen
+ 	* @version 1.0
+ 	*/
 public class gameTestNegativLifepool {
 
 	game g;

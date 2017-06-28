@@ -3,11 +3,11 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
-/**
- * @param sd
- * @author Rusty Schaerli und Matthias Weissen
- * @version 1.0
- */
+	/**
+	 * @param sd
+	 * @author Rusty Schaerli und Matthias Weissen
+	 * @version 1.0
+	 */
 public class StandardDeckTestGetCard {
 	
 	StandardDeck sd;

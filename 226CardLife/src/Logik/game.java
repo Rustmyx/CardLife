@@ -1,13 +1,13 @@
 package Logik;
-/**
- * Hier werden Objekte für die beiden Spieler erstellt und die Parameter mitgeliefert
- * Hier werden Objekte für die beiden Decks erstellt
- * @param joker
- * @param end
- * @param winner
- * @author Rusty Schaerli und Matthias Weissen
- * @version 1.0
- */
+	/**
+	 * Hier werden Objekte für die beiden Spieler erstellt und die Parameter mitgeliefert
+	 * Hier werden Objekte für die beiden Decks erstellt
+	 * @param joker
+	 * @param end
+	 * @param winner
+	 * @author Rusty Schaerli und Matthias Weissen
+	 * @version 1.0
+	 */
 public class game {
 	private	Player Spieler1 = new Player("Spieler 1", 30);
 	private	Player Spieler2 = new Player("Spieler 2", 30);

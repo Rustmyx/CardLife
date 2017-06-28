@@ -1,10 +1,10 @@
 
 package Logik;
-/**
- * Hier wird das Interface Card implementiert
- * @author Rusty Schaerli und Matthias Weissen
- * @version 1.0
- */
+	/**
+	 * Hier wird das Interface Card implementiert
+	 * @author Rusty Schaerli und Matthias Weissen
+	 * @version 1.0
+	 */
 public class NumberCard implements Card {
 
 	private String Kartenname;

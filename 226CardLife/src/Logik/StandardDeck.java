@@ -1,12 +1,12 @@
 package Logik;
-/**
- * @author Rusty Schaerli und Matthias Weissen
- * @version 1.0
- */
+	/**
+	 * @author Rusty Schaerli und Matthias Weissen
+	 * @version 1.0
+	 */
 import java.util.Random;
-/**
- * Hier werden die Karten für das Deck initialisiert
- */
+	/**
+	 * Hier werden die Karten für das Deck initialisiert
+	 */
 public class StandardDeck extends Deck {	
 	
 	
